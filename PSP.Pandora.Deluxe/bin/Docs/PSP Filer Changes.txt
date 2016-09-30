@@ -1,0 +1,1352 @@
+更新履歴
+2006/01/17
+ver0.1リリース
+2006/01/21
+ver0.2リリース
+　○viewerに横スクロール機能を追加した。
+　　左右キーで横スクロール
+　　アナログ左右で高速スクロール
+　○viewerにルーラを追加した。
+　○viewerのバックグラウンド読み込みアルゴリズムを変更した。
+　　キー操作時には読み込みを行わない。(処理が重くなり画面が乱れるため)
+　○viewerの一行最大文字数を1024から256に変更した。横に長くスクロールして
+　　も大した意味はないため。
+　○viewerの読み込み行数表示を１行目から２行目に移動した。
+　○viewerの行番号が０から始まっていたのを１からにした。
+　○filerとviewerのヘルプ表記を少し変更。（TRIANGLE→△など）
+2006/01/25
+ver0.3リリース
+　○ボリュームラベルをfilerで選択できてしまう誤動作を修正した。
+　○ファイルが存在しないときに○キーを押すと誤動作してしまっていたのを修
+　　正した。
+　○viewerでファイルがオープンできないとき、メモリが不足しているときなど
+　　に発生していた誤動作を修正した。
+　○ファイル操作機能を追加した。
+2006/02/10
+ver0.4リリース
+　○BMP画像表示に対応した。
+　○削除やpaste後、ファイルのマークやディレクトリの折り畳みが解除されてい
+　　たのを記憶するようにした。
+　○バイナリビュワー機能を追加した。
+　○ディレクトリ構造の読み込み時に画面に途中経過を表示するようにした。
+　○RAMDISKから１６キロバイト以上のファイルをPASTEする時にうまくコピーで
+　　きなかったバグを修正した。
+2006/02/16
+ver0.5リリース
+　○JPEG画像表示に対応した。
+　○PNG画像表示に対応した。
+　○残バッテリー表示を追加した。
+　○32768色だった画像表示を1600万色に変更した。
+　○画像ビュワーに画像情報表示を隠す機能を追加した。
+2006/02/20
+ver0.6リリース
+　○全体
+　　・起動アイコンをつけた。
+　　・起動タイトルを「FILE MAINTENANCE TOOL」から「PSP Filer」に変更し
+　　　た。
+　　・readmeに外部ライブラリの表記を追加した。libpngのセキュリティホール
+　　　が気になる人のために。
+　　・10ピクセルのNaga10フォントをやめ、12ピクセルの東雲フォントを採用し
+　　　た。
+　○filer
+　　・ヘルプに日本語モードを追加した。（ファイラーのヘルプ画面から○ボタ
+　　　ンで切り替え）
+　　・ファイルの削除、上書きコピー、上書きペースト時に確認操作を追加し
+　　　た。
+　　・ファイラーでちょうど一画面分の数のファイルがある時に最下行に達する
+　　　と２行スクロールしていたバグを修正した。
+　　・ファイル整列機能を追加した。ファイルまたはフォルダ上でRキーを押す
+　　　と、押すたびに名前順(N)→拡張子順(E)→サイズ順(S)→日付順(D)で整列
+　　　する。整列時は()内の文字が＜DIR＞の前に表示される。
+　　　（注）整列状況は書き込まれることはないので、再読み込みを行うと解除
+　　　される。
+　○テキストviewer
+　　・バイナリファイルをテキストビュワーで見たときに正しく表示されていな
+　　　かったバグを修正した。
+　　・ルーラに色をつけた。
+　○画像viewer
+　　・PNG画像読み込み時に途中経過表示を付け忘れていたのを修正した。
+　　・縦に短く横に長い画像をスクロールした時にファイル情報表示が乱れてい
+　　　たバグを修正した。
+　　・縮小のみだった表示機能を、４倍拡大～１／４縮小に変更した。
+　　・画面に合わせて拡大・縮小して表示する機能を追加した。
+　○バイナリviewer
+　　・ルーラをつけた。
+2006/03/12
+ver0.7リリース
+　○全体
+　　・時刻表示機能を追加した。
+　○filer
+　　・長いファイルをコピー・削除するときに確認画面が乱れていたバグを修正
+　　　した。
+　　・拡張子「.jpeg」をJPEGファイルとして認識していなかったバグを修正し
+　　　た。（以前は「.jpg」のみ認識していた）
+　　・UMDとIRDAデバイスに限り、ファイルが１個もない場合はスキップするよう
+　　　にした。
+　○画像viewer
+　　・２色のPNGを表示できなかったバグを修正した。
+　　・ファイルが存在しないときに○キーを押すと誤動作してしまっていたバグ
+　　　を修正した。
+　○テキストviewer
+　　・画面右端にタブ文字があった場合に画面左端に不当に改行記号が表示され
+　　　ていたバグを修正した。
+　　・バイナリファイルのデータが「00H」のときに改行として表示していたのを
+　　　やめ、スペースとして表示するようにした。
+　　・長い行を画面に合わせて折り返す機能を追加した。
+2006/03/20
+ver0.8リリース
+　○filer
+　　・フォルダ作成機能を追加した。
+　　・ファイル名変更機能を追加した。
+　　・フォルダ構造が深いときに、長いファイル名を表示すると画面が乱れてい
+　　　た現象を緩和した。（極端なケースには対応していない）
+　　・モーダルダイアログ表示時に、ダイアログを強調するため背景のトーンを
+　　　下げるようにした。
+　○画像viewer
+　　・32bppのPNGを正しく表示できなかったバグを修正した。
+　　・ある種のJPEGファイルを正しく表示できなかったバグを修正した。
+2006/05/05
+ver0.8+リリース（テスト版）
+　○全般
+　　・SELECTボタンを押しながらSTARTボタンを押すと終了するようにした。
+　　　FW2.6+GTAではHOMEボタンで終了できないので、終了処理追加のテストとし
+　　　て実装。
+　○テキストviewer
+　　・Ｌ，Ｒボタンでのページ送り幅を半画面から全画面に変更した。
+2006/06/30
+ver0.9リリース
+　○全般
+　　・メモリ確保のアルゴリズムを見直し、より少ないメモリでも画像の表示が
+　　　出来るようになった。（大きな画像や、ＲＡＭＤＩＳＫ上にファイルが多
+　　　数存在する場合に有効）
+　○filer
+　　・ＲＡＭＤＩＳＫ上でリネームしたとき、同じ名前のファイルが２個存在で
+　　　きてしまったバグを修正した。
+　○画像viewer
+　　・Ｌ，Ｒボタンでの拡大・縮小時に、画面の中心を基準に拡大・縮小するよ
+　　　うにした。
+2006/7/31
+ver0.9+リリース
+　○filer
+　　・ファイル整列に、サイズ逆順および日付逆順を追加した。
+　　・ファイル削除とペースト時、操作を全てキャンセルした時にメモリリーク
+　　　を起こしていたバグを修正した。
+　　・HACKER MODEを追加した。Lボタンを押しながらRボタンを押すとHACKER
+　　　MODEになり、FLASHデバイスに対してもファイルの操作が可能になる。
+　　　もう一度押すと通常モードに戻る。
+　　　警告：フラッシュデバイスの操作による、PSP本体のいかなる不具合に関し
+　　　ても当方では責任を負いません。自己責任において使用してください。
+　○画像viewer
+　　・特殊なPNG画像（２色でパレットなしのもの）が表示できなかったバグを修
+　　　正した。
+2006/8/7
+ver1.0リリース
+　○filer
+　　・英語モード時に新規フォルダが作成できない時のメニューメッセージが日
+　　　本語で出てしまっていたバグを修正した。
+　　・ver0.9+でのみ出現していた「RAMDISK上のファイル操作でペーストが選択
+　　　できてしまう」バグを修正した。
+　　・ver0.9+でのみ出現していた「RAMDISKからファイルをペーストした時にタ
+　　　イムスタンプが引き継がれない」バグを修正した。
+　　・ファイルの移動機能を追加した。（注意：コピーして削除しているため、
+　　　デバイスの残容量が不足している場合は移動できない）
+　　・ファイル情報の表示・属性（読取専用、システム、隠しファイル）編集機
+　　　能を追加した。
+　　・動作モードを保存するようにした。ヘルプ表示中に□ボタンを押すと、
+　　　EBOOT.PBPと同じ位置にfiler.iniを作成し、起動時に同ファイルを読み込
+　　　む。このバージョンでは以下の情報が保存される。（*がデフォルト）
+　　　●言語設定（*日本語・英語）
+　　　●テキストviewerのタブストップ幅（４・*８）
+　　　●テキストviewerの折り返し（あり・*なし）
+　○テキストviewer
+　　・縦ルーラをつけた。
+　○バイナリviewer
+　　・縦ルーラをつけた。
+　　・Ｌ，Ｒボタンでのページ送り幅を半画面から全画面に変更した。
+2006/8/11
+ver1.1リリース
+　○filer
+　　・HACKER MODE時にflash0デバイスに書き込みできなかったバグを修正した。
+　　　（情報感謝！）
+　　・HACKER MODE切り替えのキーをL+RからL+←+Rに変更した。
+　○テキストviewer
+　　・縦ルーラの表示をより判り易くした。
+　○バイナリviewer
+　　・縦ルーラの表示をより判り易くした。
+2006/08/15
+ver1.2リリース
+　○全般
+　　・壁紙機能を追加した。EBOOT.PBPと同じ位置にwallpaper.bmp,
+　　　wallpaper.jpg,wallpaper.pngのいずれかを配置すると、起動時に壁紙とし
+　　　て使用する。
+　○画像viewer
+　　・壁紙保存機能を追加した。画像表示中にSTART+△ボタンを押すと、表示中
+　　　の画像を壁紙ファイルwallpaper.bmpとしてEBOOT.PBPと同じ位置に保存す
+　　　る。
+2006/08/17
+ver1.3リリース
+　○filer
+　　・mp3再生機能を追加した。
+　○画像viewer
+　　・壁紙保存中に途中経過を表示するようにした。
+2006/08/20
+ver1.4リリース
+　○全般
+　　・mp3,wav再生中は"♪"を表示するようにした。
+　　・以下の形式のmp3が再生できなかったバグを修正した。
+　　　●ID3タグ付きのもの
+　　　●44kHz以外のもの
+　　　●モノラルのもの
+　　・長いファイル名のファイル情報を表示した時に画面からはみ出していたバ
+　　　グを修正した。
+　○テキストviewer
+　　・ver1.0以降で出現していた、０バイトのファイルを開くと落ちるバグを修
+　　　正した。
+2006/08/24
+ver1.5リリース
+　○全般
+　　・XMB上のアイコンを新しくした。
+　　・1.5ユーザ用に分割したEBOOT.PBPを同梱した。
+　　・VBR形式のmp3が再生できなかったバグを修正した。
+　○画像viewer
+　　・画面より大きい画像のデフォルト倍率を、画面に合わせたサイズにした。
+　　　画面より小さい画像のデフォルト倍率は等倍のまま。
+　　・←→キーで現在見ている画像と同じディレクトリにある一つ前の画像・一
+　　　つ後の画像を見られるようにした。
+　　・４色のPNG画像が正しく表示できなかったバグを修正した。
+　　・一部のパレットつきPNG画像が正しく表示できなかったバグを修正した。
+　　・グレイスケール256色のPNG画像が正しく表示できなかったバグを修正し
+　　　た。
+2006/09/08
+ver1.6リリース
+　○全般
+　　・mp3再生処理を最適化した。重い演算処理を外して、高ビットレートでも
+　　　222MHzで再生できるようにした。
+　　・UMDデバイスを認識するようにした。
+　　・背景を非表示にする機能を追加した。
+　　・楽器チューナー機能を追加した。
+　　・レジューム時に時計が更新されないバグを修正した。
+　○filer
+　　・ファイルの情報を表示する際、画像ファイルであれば画像の情報を、音声
+　　　ファイルであれば音声の情報を表示するようにした。
+　　・デバイスの空き領域を表示するようにした。（取得可能なデバイスのみ）
+　　・メモリースティックとUMDの入れ替えを自動検出するようにした。これに伴
+　　　い△ボタンのデバイス再読み込み機能は廃止した。
+　○画像viewer
+　　・←→キーで画像を移動し、□ボタンでバイナリ表示に切り替えても移動前
+　　　のファイルを表示してしまっていたバグを修正した。
+2006/09/19
+ver1.7リリース
+　○全般
+　　・メモリビュワー機能を追加した。
+　○filer
+　　・ディレクトリ構造をデバイス認識時に読み込むのをやめ、ディレクトリを
+　　　オープンする時に読み込むように変更した。
+　　・上記に伴い、ディレクトリの初期状態を閉じている状態とした。
+　　・マークしたファイルの数を表示するようにした。
+　　・２０メガバイトより大きなサイズのファイルをコピー・移動した時に％表
+　　　示がマイナスになっていたバグを修正した。
+　　・ファイルの移動およびペースト時に落ちることがあった現象を緩和した。
+　　　（VRAMからfwriteすると落ちるようなので回避してみたが、未確定なので
+　　　引き続き要検証。）
+　　・ファイルの移動およびペースト時にキャンセルを許可するようにした。
+　　・ファイルの移動時にメモリースティックの空き容量を調べ、不足であれば
+　　　移動を行わないようにした。
+2006/09/29
+ver1.8リリース
+　○全般
+　　・メモリビュワーで、メインメモリの８ＭＢ以降を参照しようとすると落ち
+　　　ていたバグを修正した。
+　○filer
+　　・マークされたファイルが無い時にはファイル操作メニューに「マークされ
+　　　たファイルをここに移動」を出現させないようにした。
+　　・マークされたファイルをRAMDISKを介さずコピーする機能を追加した。
+2006/11/14
+ver1.9リリース
+　○filer
+　　・空き容量が２Ｇバイト以上ある時に空き容量が表示されなかったバグを修
+　　　正した。
+　　・ファイルサイズと空き容量の表示をカンマ区切りにした。
+　　・文字入力で、STARTボタンでの日本語・英語切り替えをやめ、確定位置に
+　　　カーソルを移動させるようにした。
+　　・アルファベット入力時、大文字・小文字の切り替えキーを追加した。
+2006/12/10
+ver1.9+リリース
+　○filer
+　　・HACKER MODEへのトリガを改善した。
+　　　旧：Ｌ、←を押しっぱなしの状態でＲを押す。
+　　　新：Ｌ、←、Ｒの３つのキーのうち、どれか２つを押しっぱなしの状態で
+　　　　最後の１個を押す。
+　　・ファイル貼り付けおよび削除時にもフォルダの整列状態を保存するように
+　　　した。
+　　・ファイル貼り付けおよび削除時にもカーソル位置を保存するようにした。
+　　・フォルダ整列モードに「整列なし」の状態を追加した。
+　　・フォルダ作成の手順を変更した。
+　　　旧：適当な名前でフォルダを作成→そのフォルダ名を変更
+　　　新：フォルダ名を入力→その名前のフォルダを作成
+　○テキストviewer
+　　・長い日本語文章を表示した時に、全角文字の途中で行を切っていたバグを
+　　　修正した。
+　　・メモリが不足している時に、viewerを起動すると落ちていたバグを修正し
+　　　た。
+2006/12/20
+ver2.0リリース
+　○filer
+　　・新規フォルダ作成時、キャンセルしてもフォルダが作成されてしまってい
+　　　た仕様を変更し、キャンセルしたらフォルダを作成しないようにした。
+　　・RAMDISKからファイルを貼り付ける時に発生していたメモリリークを修正し
+　　　た。
+　　・RAMDISKのファイル総数制限1024を撤廃し、メモリの許す限りファイルを作
+　　　れるようにした。
+　　・ＵＭＤデバイスのディレクトリ構造を読めるようにした。
+　　・RAMDISKからファイルを移動する機能を追加した。
+　　・RAMDISKにファイルをコピーしたらマークを解除するようにした。
+2006/12/23
+ver2.1リリース
+　○全般
+　　・ＵＭＤリッピング機能を追加した。
+　　　new UMD Dumper v0.2がバグっているので、代用として。
+　　　このバージョンではメモリースティック以上のサイズのUMDを分割して
+　　　リッピングすることはできない。
+　　　リッピング時は333MHzで駆動する。
+2006/12/25
+ver2.2リリース
+　○全般
+　　・ＵＭＤリッピング速度を向上した。
+　　・メモリースティックへの書き込み速度を向上した。
+2006/12/28
+ver2.3リリース
+　○全般
+　　・ＵＭＤリッピング速度をさらに向上した。※
+　　・ＵＭＤリッピング機能で、メモリースティックの残容量が不足している場
+　　　合に分割して保存できるようにした。分割された場合、ファイルの末尾に
+　　　は".1", ".2", ... が付加され、最後のメモリースティックには接続用の
+　　　バッチファイル"cat.bat"が作られる。
+　○filer
+　　・メモリースティックの読み書き速度をさらに向上した。RAMDISKからのメモ
+　　　リースティックへの貼り付けをお試しあれ。
+　○画像viewer
+　　・背景画像を登録してもすぐに反映されなかったバグを修正した。
+
+※ある種のメモリースティックでは、読み込みと書き込みを順に行うと遅くなる
+現象が確認されたため、同時に行う方式に変更した。ただしこの方法を採ると、
+時々読み込みバッファの末尾に破損データが混入してしまう（New UMD Dumper
+v0.2も恐らく同様の不具合を抱えていると思われる）。そこで、読み込みバッ
+ファのサイズを１キロバイト大きくして試してみたところ、正常に読み込まれて
+いるようなので、テスト版としてリリースする。この件に関して誤動作報告が来
+るようであれば、速度をあきらめ、読み込みと書き込みを順に行う方式に戻すこ
+ととする。
+
+2007/01/01
+ver2.4リリース
+　○全般
+　　・ＵＭＤリッピング速度をさらに向上した。
+　　・ＵＭＤリッピングを途中でキャンセルするとハングしていたバグを修正し
+　　　た。
+　　・ＵＭＤリッピング時の速度表示を詳しくした。
+　　・ＵＭＤリッピング時のメディア認識手順およびメッセージを見直した。
+2007/01/06
+ver2.5リリース
+　○全般
+　　・ＵＭＤリッピング時、終了予想時間を表示するようにした。
+　○filer
+　　・フラッシュデバイスにも空き領域表示を追加した。
+　　・デバイス情報表示機能を追加した。
+　　・クラスタ構造チェック機能を追加した。
+　○バイナリviewer
+　　・メモリに入りきらないサイズのファイルでも、メモリに入る限り表示でき
+　　　るようにした。
+2007/01/11
+ver2.6リリース
+　○filer
+　　・整列状態を解除する時、サブディレクトリが正しくないディレクトリ配下
+　　　に表示されていたバグを修正した。
+　　・タイムスタンプ変更機能を追加した。
+　○テキストviewer
+　　・０バイトのファイルを開いた時、Ｒボタンを押すと落ちていたバグを修正
+　　　した。
+　　・一行の最大文字数を256から296(=74x4)に変更した。「画面に合わせて表示
+　　　する」モードの時に出来るだけ画面を有効に使うようにするため。
+　○画像viewer
+　　・16bppのbmpファイルを正しく表示できなかったバグを修正した。
+　　・仕様範囲外のbmpファイルであっても非圧縮であれば表示するようにした。
+　　　（IR SHELL同梱のIRSMENU.BMPなど）
+2007/01/16
+ver2.7リリース
+　○全般
+　　・flashメンテナンス機能を追加した。
+　　　flash0 または flash1 のイメージを丸ごとMS Duoにバックアップ及び復帰
+　　　することができる。（復帰はHACKER MODE時のみ）
+　　　書き戻した直後、flashメモリは不安定な挙動を示しますので、一旦filer
+　　　を終了させてください。
+　　　＃重要：作者はflash0に書き戻す機能をテストしていません。
+　　　　　　　flash1はテスト済みです。
+　　　　　　　書き戻す機能は覚悟の上で使用してください。
+      #alert: I did not test write-back function to flash0 memory.
+              flash1 was tested.
+              If you determine to try, keep in mind to
+              USE THIS FEATURE AT YOUR OWN RISK.
+　○filer
+　　・UMDデバイスの容量を表示するようにした。
+　　・デバイス情報画面に詳細表示モードを追加した。
+　○画像viewer
+　　・表示中の画像を背景として登録した時、情報表示の背景が乱れていたバグ
+　　　を修正した。
+2007/01/23
+ver2.8リリース
+　○全般
+　　・flashイメージバックアップ時、最終クラスタが欠損していたバグを修正し
+　　　た。
+　　※ver2.7ではflash0=24560k、flash1=4080kで保存されてしまっていました
+　　　が、これは計算ミスであり、このままの状態の場合、flash領域をぎりぎり
+　　　まで使っている場合正常に復帰できません。
+　　　正しくはflash0=24576k、flash1=4096kです。
+　　　このバグにより不都合が発生する可能性は低いですけれど、早急な修正が
+　　　必要と判断しましたので2.8を急いでリリースします。ご迷惑をおかけして
+　　　申し訳ありません。
+　　　なお2.7のバックアップデータは2.8以降では利用できませんので、2.8で
+　　　改めてバックアップを行ってください。
+　　・MS Duoの空き容量が不足しているときはflashイメージのバックアップを
+　　　行わないようにした。
+　　・ACアダプター接続時はバッテリーのアイコンを点滅させるようにした。
+　○filer
+　　・RAMDISKからのファイル貼り付け時、デバイスの空き容量をチェックし、
+　　　不足であれば貼り付けを行わないようにした。
+
+version 2.8:
+general:
+ 1. fixed a bug when filer backuped flash image, the last cluster was lost.
+ 2. filer will skip to backup flash image when there is not enough space
+    in MS Duo.
+ 3. battery icon blinks when PSP is connected with AC adapter.
+filer:
+ 1. when pasting files from RAMDISK, filer will check free space of
+    device, and will skip pasting if there is not enough space.
+
+2007/01/29
+ver2.9/ver2.9+リリース
+　○全般
+　　・スペイン語モードを追加した。
+　　・ＵＳＢ接続モードを追加した。
+　　　現時点では、filerはUSBによるMS Duoへの書き込みを正しく認識すること
+　　　ができません。接続後はメッセージに従い、MS Duoを一旦抜いてくださ
+　　　い。
+　○filer
+　　・ボリュームラベルの情報を見た後にfilerの表示が乱れるバグを修正した。
+
+version 2.9/2.9+:
+general:
+ 1. added Spanish mode. (Thanks djroman to translate!)
+ 2. added USB mode.
+filer:
+ 1. fixed a bug after seeing info of volume label, display was corrupted.
+
+2007/02/21
+ver3.0リリース
+　○全般
+　　・日本語でファイル名を入力したあと、英語・スペイン語に切り換えてから
+　　　ファイル名を入力すると落ちていたバグを修正した。
+　　・スペイン語でファイル名として入力できてしまっていた特殊文字を入力で
+　　　きないようにした。
+　　・ポルトガル語モードを追加した。
+　　・色設定変更機能を追加した。
+　　・ＣＰＵ負荷インジケータを追加した。
+　○画像viewer
+　　・４色、１６色のグレイスケールのPNGが正常に表示されなかったバグを修正
+　　　した。
+
+version 3.0:
+general:
+ 1. fixed a bug that caused after changing language from Japanese to
+    English or Spanish, Filer was crashed when changing filename.
+ 2. in Spanish mode, special character could be used in filename in 2.9,
+    that was a bug so I removed this feature. Even in Spanish mode, user
+    can input only English mode.
+ 3. added Portuguese mode. (thanks Nutri Kazuma to translate)
+ 4. added color edit function.
+ 5. added CPU indicator.
+picture viewer:
+ 1. fixed a bug that 4 or 16 colored gray scale PNG was not correctly
+    drawn.
+
+2007/03/23
+ver3.1リリース
+　○全般
+　　・アイコンのデザインを変更した。(RaiderX氏による)
+　　・起動時にfiler.iniがなければ言語セレクタを表示するようにした。
+　　・ドイツ語モードを追加した。
+　　・色編集画面でのアナログパッド速度を調整した。
+　　・サスペンド時およびチューナー起動時には音声の再生を中止するようにし
+　　　た。
+　○filer
+　　・UMDのディレクトリの情報を見た後にディレクトリが開けなくなってしまう
+　　　バグを修正した。
+　　・サスペンド後にMS Duoが再読み込みされていた現象を抑制した。
+　　・フォルダコピー・移動機能を追加し、すべてのコピー・移動・貼り付けの
+　　　機能を一つに統合した。
+　　・フォルダ構造が深すぎる時に落ちていたバグを修正した。
+　○テキストviewer
+　　・アナログパッドの上下スクロール速度に段階をつけた。
+　○バイナリviewer
+　　・アナログパッドの上下スクロール速度に段階をつけた。
+　○画像viewer
+　　・viewer上で←→キーを押して画像を移動してfilerに戻るとき、カーソル位
+　　　置をviewerで最後に見た画像に移動するようにした。
+
+version 3.1:
+general:
+ 1. changed icon design - made by RaiderX
+ 2. added language selector when Filer runs without filer.ini.
+ 3. added German mode. (thanks Experiment1106 to translate)
+ 4. modified analog pad speed in color edit mode.
+ 5. made mp3/wav playback stop when suspended or tuner launched.
+filer:
+ 1. fixed a bug that caused when seeing directory info on UMD.
+ 2. fixed when resuming from suspend mode, MS Duo was reloaded.
+ 3. added folder copy/move mode, and merged all copy, move, paste feature
+    to one.
+ 4. fixed a bug Filer went down when opening too deep folder structure
+text viewer:
+ 1. modified up&down scroll speed on analog pad.
+binary viewer:
+ 1. modified up&down scroll speed on analog pad.
+picture viewer:
+ 1. changing picture by left&right, and back to filer, cursor position
+    follows to the last picture you seen.
+ 
+2007/04/04
+ver3.2リリース
+　○全般
+　　・半角カタカナの「。（文字コード0xA1）」のフォントが崩れていた不具合
+　　　を修正した。
+　○filer
+　　・ポルトガル語およびドイツ語モード時に、「全てを削除」ボタン表示が□
+　　　になっていたバグを修正した。（△が正しい）
+　　・サスペンド中にUMDを入れ替えると復帰時に認識されなかったバグを修正し
+　　　た。
+　　・０バイトのサイズのファイルをコピーできなかったバグを修正した。
+　○テキストviewer
+　　・UTF-8に一部対応した。
+　　・ヘルプ画面を独立させた。
+　○画像viewer
+　　・上下キーで画像を９０°単位で回転できるようにした。
+
+version 3.2:
+general:
+ - fixed japanese font (ascii code:0xA1) was broken.
+filer:
+ - fixed wrong keys are drawn in Portguese and German mode, in "delete all",
+   not square key (triangle key is correct).
+ - fixed a bug when UMD is changed in suspend mode, still an old UMD was drawn.
+ - fixed a bug that 0 byte file could not be copied.
+text viewer:
+ - able to read UTF-8 encoding.
+ - made a help screen.
+picture viewer:
+ - able to rotate picture by up & down key.
+
+2007/04/19
+version 3.3 : MD5=571EBDAA 347F3972 75B792C8 56C0DB64
+　○全般
+　　・ロシア語モードを追加した。
+　　・起動時の言語セレクタにおけるスペイン語とポルトガル語のスペルミスを
+　　　修正した。
+　　・UTF-8モードでロシア語文字「ПРСТУФХЦЧШЩЪЫЬЭЮ」が正し
+　　　く表示されなかったバグを修正した。
+　　・MS Duoの空き容量がきわめて少ない時にUMDをリッピングするとハングアッ
+　　　プしていたバグを修正した。
+　　・全角文字の一部が潰れていた不具合を修正した。
+　○filer
+　　・RAMDISK上でファイル名を""にすることが出来てしまっていたバグを修正し
+　　　た。
+　　・ファイルのMD5値を計算する機能を追加した。
+　○テキストviewer
+　　・EUC-JPに対応した。
+　　・Cyrillic-1251（キリル文字：ウクライナ語、セルビア語、ブルガリア語、
+　　　ロシア語で使用）に一部対応した。
+　○画像viewer
+　　・画像viewer時は333MHzで駆動するようにした。
+　　・JPEG / PNG の画像展開を高速化した。（スクラッチパッド使用）
+　　・画像の明るさを変更できるようにした。
+　　・拡大縮小・画像移動・回転キーをカスタマイズ出来るようにした。
+
+general:
+ - added Russian mode.
+ - fixed miss spelling of Spanish/Portguese when bootup.
+ - in UTF-8 mode, some of Russian characters were not drawn correctly.
+ - fixed a bug when ripping UMD in case of very few space of MS Duo, the PSP hanged up.
+ - fixed some of Kanji font was broken.
+filer:
+ - fixed a bug that user could name file as "" in RAMDISK.
+ - added a feature to calculate MD5 of a file (in file info dialog)
+text viewer:
+ - able to read EUC-JP / Cyrillic-1251 encoding.
+picture viewer:
+ - runs in 333MHz in picture viewer.
+ - made faster to read JPEG / PNG files using scratchpad.
+ - able to change picture's brightness darker.
+ - able to customize key bindings (only enlarge/shrink, rotate, move to next/previous picture).
+
+2007/04/26
+version 3.4 : MD5=054637AB FB9801E5 D0B33972 24AD4802
+　○全般
+　　・3.3で出現していた、コメントつきのMP3ファイルの情報を見ると落ちてい
+　　　たバグを修正した。
+　　・ファイルサイズがある条件の範囲内のときにMD5の計算が間違っていたバグ
+　　　を修正した。
+　○テキストviewer
+　　・読み込み行数制限を9999から99999にした。
+　　・UTF-8形式のファイル読み込み速度を向上した。
+　　・コントロールコードが適切でない文字にアサインされていた不具合を修正
+　　　した。
+
+general:
+ - fixed a bug when viewing info of MP3 file with comment the PSP hanged up.
+ - fixed a bug to calculate MD5 was wrong when some kind of filesize.
+text viewer:
+ - increased line limit 9999 to 99999.
+ - increased UTF-8 file read speed.
+ - fixed that control codes were assigned to wrong characters.
+
+2007/06/21
+version 3.5 : MD5=F719AFFB 5242BFBB F0FAE23F D2A2ED6B
+　○filer
+　　・RAMDISK上で" ", ".", ".."等のファイル名が作成できてしまっていたバグ
+　　　を修正した。
+　　・FLASH上の既存ファイルに上書きコピーする際に失敗することがあった不具
+　　　合を修正した。
+　　・ReadOnly属性のファイルも削除できるようにした。
+　　・ビットレートが48kbps未満かつサンプリングレートが44KHzのように、低
+　　　ビットレート・高サンプリングレートのMP3ファイルを再生できなかったバ
+　　　グを修正した。
+　　・ファイルとディレクトリを色分けした。
+　　・ファイルコピーおよび移動時、ファイルを一つもコピーしない時に上書き
+　　　確認でキャンセルしてもコピー画面を終了しないようにした。
+
+filer:
+ - fixed a bug following files could be created on RAMDISK: " ", "." and ".."
+ - fixed missing to overwrite files into flash0 / flash1.
+ - enable to remove read-only files.
+ - enable to play low bitrate and high sampling rate MP3 audio file
+   example:44.1KHz and less than 48kbps
+ - files and directories are now drawn different colors.
+ - when copying/moving files, selecting cancel in overwrite confirmation dialog,
+   copying dialog remains which was closed and returned to filer in past version.
+
+2007/06/22
+version 3.51 : MD5=30E3BAF4 44A60D9C 2565B20A 6CFDAD9E
+　○filer
+　　・ディレクトリ設定色が保存されなかったバグを修正した。
+
+2007/07/13
+version 3.6 : MD5=5F3B8E12 AD06EE01 C69AB488 DB55BE95
+　○filer
+　　・RAMDISK上にフォルダを作れるようにした。
+
+filer:
+ - able to create folders on RAMDISK.
+
+2007/07/24
+version 3.7: MD5=C31A8DA5 F8A1DF25 72223C19 2A43E1A3
+　○filer
+　　・ReadOnly属性のフォルダも削除できるようにした。
+　　・RAMDISK上のフォルダのSystem属性をＯＮにできてしまっていたバグを修正
+　　　した。
+　　・RAMDISK上でファイル名やフォルダ名の大小文字を区別してしまっていたバ
+　　　グを修正した。
+　　・RAMDISKの使用サイズ表示にサブフォルダ内にあるファイルサイズを足して
+　　　いなかったバグを修正した。
+　　・RAMDISK間のファイル移動の場合はエントリのみを移動するようにした。
+　　・上書きコピー時に「全てを上書き」機能を追加した。
+
+filer:
+ - able to remove read-only folders.
+ - fixed a bug that a system bit on folder on RAMDISK could be turned.
+ - fixed a bug that cases of filename was sensitive on RAMDISK.
+ - fixed a bug that used size on RAMDISK was not calculated correctly since subfolder's files were skipped.
+ - when moving files on RAMDISK, only data entry will be moved (not copy & delete).
+ - added a "write all" feature when overwriting files.
+
+2007/08/07
+version 3.8: MD5=25124AE9 AE517399 01CF92EF 499C1115
+　○全般
+　　・イタリア語モードを追加した。
+
+general:
+ - added Italian mode.
+
+2007/10/02
+version 3.9: MD5=2FB280EC EBDF82C7 4125C85E 888B82AE
+　○全般
+　　・異常なフォーマットのmp3ファイルを開くと落ちていたバグを修正した。
+　　・UMDリッピング時、ファイルシステム上アクセスできない領域を補完する
+　　　機能を追加した。（末尾２ｋ～６ｋバイトを補完する）
+　　　readme.txtの末尾コラムを参照のこと。
+　○filer
+　　・Kバイト表示/Mバイト表示機能を追加した。
+　　・ファイル・フォルダのタイムスタンプに現在の時刻を設定する機能を追
+　　　加した。
+　　・ロシア語モード時、ファイルの情報を見たときに落ちていたバグを修正
+　　　した。
+　　・UMDデバイスの情報に、「ファイルシステム上のイメージサイズ」と
+　　　「ISO情報に記述されているイメージサイズ」を表示するようにした。
+　○テキストviewer
+　　・EUCモード時に一部の文字が表示できなかったバグを修正した。
+
+general:
+ - fixed a bug Filer was crashed when it opened a broken mp3 file.
+ - added a feature when ripping UMD image to append extra records that could not be accessed from filesystem. (bottom 2k-6kbytes)
+filer:
+ - added a feature to view Kbytes / Mbytes mode.
+ - added a feature to set timestamp of file/folder to NOW.
+ - fixed a bug in Russian mode Filer was crashed when it opened file information.
+ - added to show "filesystem size" and "described size in ISO" in UMD device information.
+text viewer:
+ - fixed a bug Some characters could not be drawn in EUC-jp mode.
+
+2007/10/26
+version 4.0: MD5 = E93695B4 BE991FA3 47FC252F 7DE1A9E8
+　○全般
+　　・CPU速度を調整するモードを追加した。
+　　　（UMDのリッピングは常に333MHzで駆動する）
+　　・LAMEタグ付きのMP3を正常に再生出来なかったバグを修正した。
+　○filer
+　　・ISOファイル中のファイルをアクセスできる機能を追加した。
+　　　readme.txtの末尾コラムを参照。
+
+general:
+ - added a feature to modify CPU speed.
+   (Though UMD ripping feature always runs in 333MHz.)
+ - fixed a bug some kind of mp3 files that had LAME tags could not be played.
+filer:
+ - added a feature to access ISO archive file.
+   (Those are read-only, and cannot be marked and sorted)
+
+2007/11/02
+version 4.1: MD5 = 03046088 5B65D8D3 BACE7AE8 3D610CB7
+　○全般
+　　・メトロノーム機能を追加した。
+　　・CPU速度を保存できるようにした。
+　　・カーネル3.00バージョンを同梱した。このバージョンは、今のところ以下
+　　　の機能は使用できない。
+　　　・ＵＳＢ接続
+　　　・フラッシュメモリのメンテナンス
+　　　・flash0への書き込み(flash1は可能)
+　　　・flash0/flash1のデバイス情報表示
+　○filer
+　　・ZIPファイル中のファイルをアクセスできる機能を追加した。
+　　・アーカイブファイル中のディレクトリにも色を付けるようにした。
+　○テキストviewer
+　　・LATIN1-1252エンコードに対応した。
+　○画像viewer
+　　・小さい画像を表示するときに画面に%表示が残っていたバグを修正した。
+
+general:
+ - added a metronome feature.
+ - enabled to save CPU clock settings.
+ - bundled kernel3.00 version (in kernel3 folder) that cannot do following feature:
+   -- connecting to PC via USB.
+   -- flash memory maintenance.
+   -- writing files into flash0 (though flash1 can be modified).
+   -- showing flash device information.
+filer:
+ - added a feature to access ZIP archive file. (read-only)
+ - changed normal-color to directory-color for archive file's directory.
+text viewer:
+ - able to read LATIN1-1252 encoding.
+picture viewer:
+ - fixed a bug that a progress indicator remained on screen when it finished to read a small picture.
+
+2007/11/3
+version 4.1+: MD5 = A15E60D0 C7CAE8EB F253898D F5832A0E
+　○filer
+　　・バージョン４．１で出現していた、未読み込みのディレクトリに対してＲ
+　　　キーを押して整列すると落ちていたバグを修正した。
+　　・アーカイブファイル内ファイルも整列出来るようにした。
+
+filer:
+ - fixed a bug that caused in version 4.1, Filer was down by pushing R key to sort folder which is not already opened.
+ - able to sort archive file (ISO & ZIP)'s folders.
+
+2007/11/07
+version 4.2: MD5=158D38D5 566FED33 F5B02664 D96E367E
+　○filer
+　　・CSOファイル中のファイルをアクセスできる機能を追加した。
+　　・バージョン４以降で出現していた、壁紙が半分程度しか表示されなかった
+　　　バグを修正した。
+　　・HACKER MODEのトリガを「Ｌ＋←＋Ｒ」から「←＋Ｒ」に変更した。
+　　・アーカイブファイル内のファイル整列を「整列なし」状態に出来なかった
+　　　不具合を修正した。
+　○画像viewer
+　　・回転時の描画速度を大幅に向上した。
+　　・画像切り替え時に拡大縮小・回転状況を引き継ぐようにした。
+　　・回転方向を表示するようにした。
+
+filer:
+ - added a feature to access CSO archive file. (read-only)
+ - fixed a bug that appeared in version 4.0 and 4.1, a wallpaper was not drawn correctly.
+ - changed a HACKER MODE's trigger: digital left & R key.
+ - enabled to sort archive file's folder to "not sorted".
+picture viewer:
+ - increased drawing speed very much when a picture is rotated.
+ - switching to next/previous picture, rotated status & magnification rate remain as before.
+ - enabled to show rotate direction.
+
+2007/11/17
+version 4.3: MD5=A52D7C03 0835815A 192D1F8D 7A57EACC
+　○全般
+　　・UTF-8/Cyrillic-1251文字セット時のキリル文字フォントのサイ
+　　　ズを小さくした。
+　　・XMBアイコンを整列する機能を追加した。
+　○filer
+　　・ある大きさ以上のサイズのwavファイルを再生すると落ちていた
+　　　バグを修正した。
+　　・ある種のISO/CSOを含むフォルダを開こうとすると落ちていた
+　　　バグを修正した。
+　○画像viewer
+　　・以下の形式のPNG画像が正しく表示できなかったバグを修正した。
+　　　16ビットグレイスケール、48ビットカラー、およびαブレンド
+　　・バージョン4.2で出現していた、壁紙が保存できなかったバグを
+　　　修正した。
+
+general:
+ - reduced cyrillic font size of UTF-8 and Cyrillic-1251 charset.
+ - added a feature to re-order XMB icons.
+filer:
+ - fixed a bug Filer was crashed when it plays a large wav file.
+ - fixed a bug Filer was crashed when it opens a folder which has some kind of ISO/CSO.
+picture viewer:
+ - fixed a bug following PNG picture was not drawn correctly:
+ 16bit gray scale, 48bit color, and having alpha-blend.
+ - fixed a bug that caused in version 4.2, a wallpaper could not be saved.
+
+2007/11/18
+version 4.31: MD5=6B8BF371 627E8682 D289D61D 1E43D953
+連投スマソ。
+　○全般
+　　・XMBアイコン整列時、破損ファイルがあるとFilerが落ちていた
+　　　バグを修正した。
+　○画像viewer
+　　・モノクロJPG画像を正しく表示できなかったバグを修正した。
+
+sorry to release often!
+general:
+ - fixed a bug Filer was crashed when sorting XMB icons where MS has a corrputed icon.
+picture viewer:
+ - fixed a bug that monochrome JPEG picture was not drawn correctly.
+
+2007/11/27
+version 4.4: MD5=6558A5FA 033CA72E E10F8ECE BEC80802
+　○全般
+　　・ポーランド語モードを追加した。
+　○filer
+　　・cso/zip中の残メモリより大きいファイルを展開できなかった不具合を修正
+　　　した。
+　○テキストviewer
+　　・ファイル先頭がUTF-8のBOMである場合、自動的にUTF-8エンコードに切り替
+　　　えるようにした。
+
+general:
+ - added Polish mode.
+filer:
+ - able to extract files in cso/zip that are larger than memory size (about 22MB).
+text viewer:
+ - added a feature to change automatically into UTF-8 encoding when a file begins with UTF-8 BOM.
+
+2007/12/06
+version 4.5:F0C32C1B 0DC7170D 6E36F90C 2616FDEA
+　○全般
+　　・フランス語およびセルビア語モードを追加した。
+　　・コードを見直し、プログラムサイズを大幅に縮小した。
+　○filer
+　　・zipファイルのうち、一部の圧縮形式(暗号化されていないが、bitflag ==
+　　　0でないもの)が展開できなかったバグを修正した。
+　　・zipファイル中の小さいファイル(15バイト以下)を正常に展開できなかった
+　　　バグを修正した。
+　　・ある種のmp3ファイルを再生できなかったバグを修正した。
+　　・ディレクトリ容量を計算するモードを追加した。Lボタンで切り替える。
+　　・上記に伴い、ディレクトリの色を通常ファイルと判別しやすい00FFF(シア
+　　　ン)に変更した。
+　　・UMDリッピングを中止した場合、中途ファイルを削除する仕様に変更した。
+　　・HELP画面にファームウェアのバージョンとslimかどうかを表示する機能を
+　　　追加した。
+　　　※slimであっても、ファームウェアのバージョンが3.71未満の場合は通常
+　　　のPSPとして動作する。
+　　・slimの場合は32メガバイトの追加メモリをRAMDISKとして使用する機能を
+　　　追加した（テスト版）。
+　　・RAMDISKのデバイス情報として、RAMDISK上のファイルが使用しているRAMの
+　　　内訳を表示する機能を追加した。
+　○テキストviewer
+　　・version4.4で出現していた、CSO中の2kバイトを超えるファイルが正常に表
+　　　示出来なかったバグを修正した。
+
+general:
+ - added French and Serbian mode.
+ - reduced EBOOT size.
+ - added a column to rip UMD - see "<UMD ripping tips>" section in readme.english.txt.
+filer:
+ - fixed a bug that some kind of zip format could not be extracted.
+   (warning: Filer still does not support encrypted zip)
+ - fixed a bug that some kind of mp3 could not be played.
+ - added a directory-size calculation mode. use L key to toggle (6 patterns):
+   drawn by bytes, Kbytes, Mbytes,
+   by bytes (with directory), Kbytes (w/d) and Mbytes (w/d)
+ - changed default directory color into 00FFFF.
+ - changed specifications when aborted UMD ripping, to remove the unfinished ripped file.
+ - added a feature to show FW version and whether the PSP is slim or not in HELP screen.
+   (even if running on PSP slim, under FW version less than 3.71, it is considered as a normal PSP)
+ - added a feature to use extra 32MB memory for RAMDISK if PSP slim. (test version)
+ - added a feature to view extra 32MB memory by memory viewer if PSP slim.
+ - added a feature to see memory usage occupied by RAMDISK files on RAMDISK device info.
+text viewer:
+ - fixed a bug that a file larger than 2kb in CSO file could not be drawn correctly.
+
+-------------------------------------------------------------------------
+2007/12/11
+version 4.51:MD5=D3A0DA48 2DA65A6F B9C2DCCD 6DD672E4
+　○filer
+　　・SHA-1を計算する機能を追加した。
+　　・サイズの小さいファイルを上書きコピーできなかったバグを修正した。
+　　・バージョン4.5で出現していた、CPU負荷の大きい時（ディレクトリ容量計
+　　　算時のデバイス切り換え、80MHz時のMP3再生、折り返しモードでのviewer
+　　　表示等）に落ちていたバグを修正した。
+
+filer:
+ - added a feature to calculate SHA-1.
+ - fixed a bug that a smaller file could not be overwritten.
+ - fixed a bug that Filer was crashed when CPU runs at 100%.
+   (e.g. changing device when calculating directory size, playing MP3 at 80MHz, text viewer on bend mode, etc.)
+-------------------------------------------------------------------------
+2007/12/31
+version 4.6:MD5=5F4C8CDD 54379C76 D2FED169 F0321D21
+　○filer
+　　・途中にゴミデータが入っているmp3ファイルでも可能な限り再生するように
+　　　した。
+　　・音声再生終了時に発生していたノイズを軽減した。
+　　・空きメモリサイズより大きいwav,mp3を再生できるようにした。
+　　・標準でないフォーマット(PCでフォーマットした等)のMS DUOでもデバイス
+　　　情報表示が出来るようにした。
+　　・デバイス情報表示時に落ちていたことがあるバグを修正した。
+
+filer:
+ - supported to playback MP3 file which has some corrupted data.
+ - reduced noise at the end of MP3.
+ - enabled to play large WAV/MP3 files (more than 22MB).
+ - enabled to show device information of MS Duo that is not formatted by PSP.
+ - fixed a bug that Filer was crashed to show device information.
+-------------------------------------------------------------------------
+2008/02/13
+version 4.7:MD5=8B735340 81CBB5F1 CA814CAC A8A6C548
+　○filer
+　　・音声再生中にCPU負荷が高くなりデコード速度が追いつかなくなった時は
+　　　音声をミュートするようにした。
+　　・コピー画面で新しいディレクトリを作れるようにした。
+　　・RARファイル中のファイルをアクセスできる機能を追加した。
+
+filer:
+ - mutes sound while CPU is busy.
+ - added a feature to create a directory in copy screen.
+ - added a feature to access RAR archive file. (read-only)
+-------------------------------------------------------------------------
+2008/02/20
+version 4.8:MD5=7E8E7077 76A561E8 1E079BA5 F41147A1
+　○filer
+　　・ハンガリー語モードを追加した。ハンガリー精神。
+　　・RARファイル中のファイルをフォルダと誤認識することがあったバグを修正
+　　　した。
+　　・暗号化されたRARファイルを開こうとすると落ちていたバグを修正した。
+　　・残メモリが少ない時にRARファイルを開こうとすると落ちていたバグを修正
+　　　した。
+　　・CFW3.90以降で出現していた、アーカイブファイルを展開するとファイル・
+　　　フォルダがReadOnly属性になり、変更も削除も出来なくなっていた現象に
+　　　対応した。
+　　・128バイトより長いファイル名をリネームしようとすると落ちていたバグを
+　　　修正した。
+
+filer:
+ - added Hungarian mode.
+ - fixed a bug that some kind of file in RAR was considered as a directory.
+ - fixed a bug that Filer was crashed when it tried to open an encrypted RAR archive.
+ - fixed a bug that Filer was crashed when it tried to open a RAR archive on few memory.
+ - chased to fix that extracted files and folders from archive files would be ReadOnly and could not change nor delete anymore under CFW 3.90 or later.
+ - fixed a bug that Filer was crashed when it tried to rename a long file name (more than 128bytes).
+-------------------------------------------------------------------------
+2008/03/18
+version 4.9:MD5=392591FD 8C60AFAF D60AB9C1 10D32B45
+　○filer
+　　・ブルガリア語モードを追加した。
+　　・ファイル名表示変更機能を追加した。アナログ左右で３段階調節。
+　　・アナログ左右キーで、ディレクトリ内のファイルをマークまたは解除する
+　　　機能を廃止した。
+　　・RARファイル展開時、ファイル中に書かれた展開メモリサイズを無視する
+　　　ように変更した。PSPのメモリは22MB程度しかないための措置。
+　　・サンプリングレートの低いwavファイルを再生すると、音声が乱れていた
+　　　バグを修正した。
+
+filer:
+ - added Bulgarian mode.
+ - added a feature to change length of drawing file name (short, middle, long).
+ - removed a feature to mark/unmark all of subfolder's files by analog left/right.
+ - changed to ignore extract-memory-size written in a RAR file because Filer could not extract it that expects more than 22MB.
+ - fixed a bug that Filer could not play low sampling rate WAV files correctly.
+-------------------------------------------------------------------------
+2008/05/08
+version 5.0:MD5=BB58810F 43487E7B AD264BD5 1D95CC3D
+　○filer
+　　・ギリシャ語モードを追加した。
+　　・ある種のRARファイル（恐らく、コメント付きのもの）を開くと落ちてい
+　　　たバグを修正した。
+　　・Mac OS で作成されたZIPファイルに対応した。
+
+filer:
+ - added Greek mode.
+ - fixed a bug that Filer was crashed when it opened some kind of RAR file (probably having a comment).
+ - fixed a bug that a zipped file made by Mac OS could not be accessed.
+-------------------------------------------------------------------------
+2008/05/20
+version 5.1:MD5=6487C338 12504DDF B81E0283 CD92AA9E
+　○全般
+　　・カーネル３バージョンでもUSB接続が出来るようになった。
+　○バイナリviewer
+　　・ファイル編集機能を追加し、バイナリエディタとなった。
+　　　※メモリに入りきらないファイル、アーカイブ内ファイルは編集不可。
+
+general:
+ - enabled to connect to PC via USB in kernel3 version.
+binary viewer:
+ - added a binary-editor feature.
+   note:a large file (more than 22MB) and an archived file (which is bound in .zip, .rar, etc.) cannot be edited.
+-------------------------------------------------------------------------
+2008/05/21
+version 5.1+:MD5=F0D8A91A 68AD2FCA 76D672A5 D5E887C4
+　○全般
+　　・5.1で出現していた、CFWのバージョンによってはカーネル３バージョンが
+　　　起動できなかったバグを修正した。反面、カーネル３でのUSB接続は、CFW
+　　　のバージョンによっては機能しなくなることがある。
+　○バイナリエディタ
+　　・０バイトのファイルを開くと落ちていたバグを修正した。
+
+general:
+ - fixed a bug that the kernel3 Filer could not run under some kind of CFW version (that caused in 5.1 only). Instead, in those CFW, 5.1+ of kenel3 Filer cannot run USB feature.
+binary editor:
+ - fixed a bug that Filer crashed when it opens 0 byte file.
+-------------------------------------------------------------------------
+2008/07/02
+version 5.2: MD5=5EB2E395AA8462079C6F1EB9098042D8
+　○filer
+　　・ゲームアイコン整列対象となるフォルダ名を/PSP/GAMEnnn (nは数字)から
+　　　/PSP/GAMEnaa (nは数字、aは英数字) に変更した。
+　○画像viewer
+　　・○ボタンを「画面横サイズに合わせる」と「縦サイズに合わせる」の往復
+　　　ボタンとした。
+　○バイナリエディタ
+　　・HELP表示中にファイルの読込が終了した場合、HELP画面が消えてしまって
+　　　いたバグを修正した。
+
+filer:
+ - added "GAME4XX" folder to re-order game icons. (added "GAMEnaa" folder : n=0-9, a=0-9/a-z/A-Z)
+picture viewer:
+ - changed circle button's function to toggle "make a picture to fit screen width" and "to fit screen height".
+binary editor:
+ - fixed a bug that a help screen was vanished when Filer finishes to read a large file.
+
+-------------------------------------------------------------------------
+2008/07/14
+version 5.3: MD5=1657FBD94F5448593E6C8EFE7CB456E6
+　○全般
+　　・wallpaperを拡張した。Filerと同じディレクトリに、filer/text/binary
+　　　[.bmp/.jpg/.png]を配置しておくと、モードに応じて背景を自動的に切り
+　　　換えて表示する。
+　○画像viewer
+　　・画像読み込み処理を別スレッドとした。
+　　・画像読み込み中に音声再生が停止していた不具合を軽減した。
+　　・メモリの許す限り、次の画像を先読みするようにした。（最大７個）
+
+general:
+ - putting filer/text/binary [.bmp/.jpg/.png] in the same folder of Filer, Filer changes background as mode changes.
+
+picture viewer:
+ - image loading will be done in a separated thread.
+ - reduced a bug that audio playback was stopped while reading a piture.
+ - added a feature to read next picture in background. (maximum 7 pictures)
+
+-------------------------------------------------------------------------
+2008/07/25
+version 5.4: MD5=6140ABE02F7E468919AE4F332678120A
+　○画像viewer
+　　・メモリが不足している時、先読みを行うと落ちていたバグを修正した。
+　　・先読み動作中、スクロール動作が遅くなっていた現象を軽減した。
+　　・START+上下左右キーで画像の端にジャンプする機能を追加した。
+　　・画像読み込み途中でも前後の画像に移動できるようにした。
+
+picture viewer:
+ - fixed a bug that Filer was crashed when reading picture in background at low memory.
+ - made scroll speed faster whie reading picture in background.
+ - added a feature to jump to the edge of the picture by pressing START with left, right, up and down.
+ - enabled to move next/previous picture while reading picture in foreground.
+
+-------------------------------------------------------------------------
+2008/09/08
+version 5.5: MD5=9DCEE22FC671DC2AB97CBD39E06ED578
+　○全般
+　　・日本語入力のデフォルトを半角英数字に変更した。
+　○filer
+　　・zipファイル中のサブディレクトリのタイムスタンプが正しくなかったバグ
+　　　を修正した。
+　　・コピー終了時、×ボタンでしかfilerに戻れなかった仕様を変更し、○でも
+　　　×でも戻れるようにした。
+　　・→ボタンの仕様を「全マーク」から「全マークまたは解除」に変更した。
+　　・←ボタンの「全マーク解除」機能を廃止した。
+　　・←+○ボタンで親フォルダに移動できる機能を追加した。
+　　・←+STARTボタンで現在のフォルダをデフォルトとし、次回起動時に表示さ
+　　　せる機能を追加した。
+　　・←+△ボタンでデフォルトフォルダにジャンプする機能を追加した。
+　　・ファイルのコピーや削除終了後、アーカイブファイル中のフォルダが閉じ
+　　　ていた仕様を、コピー前の状態を復活させるように変更した。
+　　　（多くのアーカイブが開いていると復活に時間がかかるので注意）
+　○画像viewer
+　　・拡大と縮小をスムースに行うように変更した。
+　　・裏で画像読み込みが完了した時に画面がちらついていたバグを修正した。
+　　・画像の端でアナログパッドを操作したとき画面がちらついていたバグを
+　　　修正した。
+　　・jpegファイルの読み込み速度を40%程度向上した。
+
+filer:
+ - fixed a bug that time stamp of folders in zipfile was corrupted.
+ - changed a feature to close window when copying done.
+   before: pushing cross to close it.
+   now: pushing either circle or cross to close it.
+ - changed a feature pushing right arrow:
+   before: mark all files in folder.
+   now: mark/unmark all files in folder.
+ - removed a feature pushing left arrow, to unmark all files in folder.
+ - added a feature to move to parent folder by pushing left arrow + circle.
+ - added a feature to save this folder to default (this folder appears in next startup) by pushing left arrow + START.
+ - added a feature to move to default folder by pushing left arrow + triangle.
+ - added a feature to restore opened folders in archive files after copying/deleting files.
+   (note: restoring feature is slow: you have to wait a lot if you open many archive files before copying/deleting)
+
+picture viewer:
+ - made smooth to enlarge/shrink picture.
+ - fixed a bug that a picture was blinked when background-reading was done.
+ - fixed a bug that a picture was blinked when pushing analog pad on the edge of the pitcure.
+ - increased to read JPEG file faster (about 40% faster than before).
+
+-------------------------------------------------------------------------
+2008/09/12
+version 5.6: MD5=075CFE9BF96D18D9F44B49E8E057E1AE
+　○全般
+　　・kernel3でのflash0アクセスを可能にした。（Torch氏に感謝！）
+　○filer
+　　・バージョン5.5で出現していた、まだ開いていないフォルダを削除すると落
+　　　ちていたバグを修正した。
+　　・フォルダ名が.ZIP, .RAR, .ISO, .CSO で終わっていると開けなかったバグ
+　　　を修正した。
+　○画像viewer
+　　・バージョン5.5で出現していた、モノクロJPEGを開こうとすると落ちていた
+　　　バグを修正した。
+
+general:
+ - enabled to access flash0 by kernel3 Filer. (thanks to Torch!)
+
+filer:
+ - fixed a bug that Filer was crashed when removing un-opened folder.
+ - fixed a bug folders which have those extensions could not be opened :".ZIP", ".RAR", ".ISO", ".CSO".
+
+picture viewer:
+ - fixed a bug that Filer was crashed when opening mono-JPEG file.
+-------------------------------------------------------------------------
+2008/11/28
+version 5.7: MD5=4b83368bce5d6d4783985b446348d583
+
+　○全般
+　　・CFWとの組み合わせによってはUMDアクセス時に無限ループに陥っていたバ
+　　　グを修正し、Filerに復帰するようにした。
+　○filer
+　　・画面中すべての行が深いフォルダ下のファイルだった場合、左にスクロー
+　　　ルして表示領域を節約するようにした。
+　　・VBRのMP3ファイルの情報を見たとき、間違ったビットレートが表示されて
+　　　いたバグを修正した。
+　　・ヘッダサイズが64kバイトより大きいMP3ファイルを再生できなかったバグ
+　　　を修正した。
+
+general:
+ - fixed a bug to be frozen while accessing UMD (depending on CFW's version).
+
+filer:
+ - added a feature to scroll left to draw file names wider in deep folders.
+ - fixed a bug to have shown a wrong bit rate of VBR MP3 file.
+ - fixed a bug that some MP3 file cannot be played which has a large (>64KB) header.
+
+-------------------------------------------------------------------------
+2009/01/21
+version 5.8: MD5=f77bccb1b3943ad5b75a2af840941e59
+
+　○全般
+　　・スウェーデン語モードを追加した。
+　　・アナログパッド入力を無視する機能を追加した。
+　○filer
+　　・アーカイブファイルの内容を全て展開する機能を追加した。
+　　・RARファイル中に"?"などの不正な文字を使用したファイルがあった時、展
+　　　開できなかったバグを修正した。（ファイル名として使用できない文字は
+　　　すべて"_"に置換される）
+　　・アーカイブファイルの内容をRAMDISKに展開出来なかった時にメモリリーク
+　　　を起こしていたバグを修正した。
+　　・コピー終了時「コピーしたファイル数＋作ったフォルダ数」の合計を表示
+　　　していた仕様を「コピーしたファイル数」を表示するように変更した。
+
+general:
+ - added Swedish mode.
+ - added a feature to ignore analog pad.
+
+filer:
+ - added a feature to extract all files in an archive file.
+ - fixed a bug that files in RAR archive which had a broken filename (e.g. '?') could not be extracted correctly. (Those "unusable" characters will be replaced into '_')
+ - fixed a bug that memory leak was occured after failing to extract archive files into RAMDISK.
+ - fixed a bug to have shown wrong count of files after copying.
+
+-------------------------------------------------------------------------
+2009/02/16
+version 5.9: MD5=AB7C94BD1322DC406BAD88DAE161F689
+
+　○全般
+　　・オリジナルOSKの機能を大幅に向上した。
+　　・kernel3版に限り、ビルトインOSKが使用可能になった。
+　○filer
+　　・5.8で出現していた、コピー時に新規ディレクトリを作ったとき、カーソル
+　　　がそのディレクトリに移動出来なかったバグを修正した。
+　　・コピー先のデバイスのデフォルトを、ms0でなくコピー元デバイスとする
+　　　ように変更した。コピー元デバイスが書き込み禁止の場合はms0。
+
+　○バイナリエディタ
+　　・5.8で出現していた、セーブ確認時のメッセージのバグを修正した。
+
+　○テキストviewer
+　　・ラインエディタ機能を追加した。保存時はshift-jisで保存される。また、
+　　　shift-jis以外のテキストファイルおよび、バイナリファイルの編集・保存
+　　　時の動作は保証しない。
+　　・UTF-16に対応した。
+
+general:
+ - increased much of original OSK feature.
+ - enabled to use built-in OSK (kernel3 version only).
+
+filer:
+ - fixed a bug in copy window if you created a new folder, you could not move cursor to the folder.
+ - changed a destination device to copy from ms0 to the device where source files belong.
+
+binary editor:
+ - fixed a bug that have shown wrong message on saving.
+
+text viewer:
+ - added a feature of line editor.
+   note: edited files will be forced to be shift-jis encoding when it is saved. And, non-shift-jis file and binary file may not be edited & saved correctly.
+ - able to read UTF-16 encoding.
+
+-------------------------------------------------------------------------
+2009/02/27
+version 6.0:
+
+　○filer
+　　・大容量のメモリースティック使用時、空き容量が間違って表示されていた
+　　　バグを修正した。
+　　・ギガバイト表示機能を追加した。同時に、小さいサイズのファイルの時は、
+　　　低いスケールで表示するように変更した。
+　　・FW5.00上のkernel3版がUSB接続できなかったバグを修正した。
+　　・UMDリッピング時、MS Duoの容量が不足している等の場合に、CFWのバー
+　　　ジョンによっては無限ループに陥っていたバグを修正した。
+　　・333MHz駆動時、ビルトインOSK終了時に無限ループに陥っていたバグを修正
+　　　した。
+
+filer:
+ - fixed a bug wrong free area was shown when using large (>4G) MS Duo.
+ - added a feature to show GB mode. And, even in larger scale mode, small files are shown on smaller scale.
+ - fixed a bug USB connection was failed on kernel3 using under FW 5.00.
+ - fixed a bug at ripping UMD, to be frozen, when MS Duo was full (that happened depending on CFW version).
+ - fixed a bug to be frozen when finishing built-inn OSK at 333MHz.
+
+-------------------------------------------------------------------------
+2009/10/01
+version 6.1:
+
+　○全般
+　　・バージョン名表記をカーネル1.5とカーネル3.0で入れ換え、
+　　　1.5を「Filer6.1.150」、3.0を「Filer6.1」とした。
+　　・ディレクトリ構成を「filer」「kernel3」から
+　　　「GAME150/FILER150」「GAME/FILER」に変更した。
+
+　○filer
+　　・ファイル編集後、filerに戻った時ファイル情報が更新されていなかった
+　　　バグを修正した。
+　　・RAMDISK上のファイルを編集した時タイムスタンプが更新されていなかった
+　　　バグを修正した。
+　　・０バイトのファイルを編集した時落ちていたバグを修正した。
+　　・メモリ管理機構を見直し、必要最低限のメモリを確保するように修正し
+　　　た。これに伴い、今まで動作しなかったプラグインが動作することが期待
+　　　できる。（プラグイン使わないので試してないけど）
+　　・PSP-2000以降のメインメモリが増えた機種において、全メモリをリニアに
+　　　扱えるように変更した（今まではメインメモリ24MB+拡張メモリ32MBとし
+　　　て扱っていた）。これに伴い、今までRAMDISKには32MBより大きいファイル
+　　　は置けなかったが、PSP-2000以降では50MB程度までの大きさのファイルが
+　　　配置出来るようになった。
+　　・リッピング時のデフォルトファイル名を "umd.iso" から "製品番号.iso"
+　　　に変更した。
+　　・リッピング時に、UMDの読み込みエラーが発生するとFilerが落ちていたバ
+　　　グを修正した。
+　　・kernel3版のみ、adhocファイル転送機能を追加した。
+　　・いつのまにか起動時にデフォルトフォルダに移動する機能が失われてし
+　　　まっていたバグを修正した。
+
+　○画像viewer
+　　・ファイルの更新時刻を表示する機能を追加した。
+　　・次の画像に移動した時、以前の拡大率を保持せず、画面に合う倍率で表示
+　　　するように変更した。
+
+general:
+ - changed directory structure for kernel1.50 & kernel3.00.
+ - changed XMB name for kernel1.50 & kernel3.00.
+
+filer:
+ - fixed a bug after edited a file, filer drawed wrong filesize.
+ - fixed a bug after edited a file on RAMDISK, timestamp was not updated.
+ - fixed a bug Filer was crashed when editing 0 byte file.
+ - made to allocate memory, to use few memory as possible. Then, some kind of plugin may run with Filer. (Though I did not test any plugin)
+ - on PSP-2000(or later PSP), enabled to copy a large file (>32MB) to RAMDISK.
+ - changed a default file name when ripping from "umd.iso" to "ULJS-xxxxx.iso".
+ - fixed a bug Filer was crashed when ripping UMD and found a bad sector on the UMD.
+ - added a feature to transfer a file via wifi adhoc. (kernel3 only)
+ - fixed a bug Filer did not move to default folder on startup.
+
+picture viewer:
+ - added a feature to draw modified time of the picture.
+ - changed a feature, when moving to the next picture, the next picture will be drawn which size fits to screen.
+
+-------------------------------------------------------------------------
+2009/10/02
+version 6.2:
+　○filer
+　　・6.1で出現していた、rarアーカイブを開こうとすると落ちていたバグを修正した。
+
+filer:
+ - fixed a bug Filer 6.1 was crashed when opening RAR archive file.
+
+-------------------------------------------------------------------------
+2009/10/08
+version 6.3:
+　○filer
+　　・6.1, 6.2で出現していた、rarアーカイブを正常に展開できなかったバグを
+　　　修正した。
+
+general:
+ - I gave up to update changelog in English since most of quotations in websites remove donate section.
+
+-------------------------------------------------------------------------
+2009/10/15
+version 6.4:
+　○filer
+　　・7zアーカイブに対応した。ただし展開後のファイルサイズの合計がPSPの
+　　　メモリサイズ以下のものしか展開できない。
+
+/* Please donate (only U.S. $10), if you feel Filer useful.
+Paypal & credit card will be accepted. */
+http://www.geocities.jp/mediumgauge/

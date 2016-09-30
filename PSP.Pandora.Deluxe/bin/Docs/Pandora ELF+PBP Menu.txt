@@ -1,0 +1,123 @@
+Pandora ELF & PBP Menu 0.4
+-- jas0nuk
+**************************
+
+Usage and features
+******************
+Here's an updated version of my ELF menu, now with PBP support and working with Despertar del Cementerio v5
+
+Replace ms0:/TM/DC5/kd/resurrection.elf on your magic memory stick with the one included in this archive; the PSP will then load it when you insert the Pandora battery & memory stick, and it will show a list of ELFs and PBPs inside the ms0:/elf folder
+
+Use D-Pad up/down to choose the application you want to run, and press X.
+Hold HOME and press D-pad up/down to reload the menu if you encounter an issue
+
+The menu fully identifies the PSP motherboard version without the need for IdStorage for diagnostic purposes
+
+There seem to be problems loading applications if the filename contains spaces or symbols, so use underscores(_) instead. These will be converted to spaces on the menu.
+
+Applications containing _SLIM or _FAT at the end of the filename (e.g. blah_SLIM.elf) will be greyed out if the menu is not running on that model.
+For example, keyCleaner_FAT.elf will be greyed out and unselectable on a Slim PSP.
+
+If the ELF/PBP fails to run, the screen usually flickers and reloads the ELF menu. It is recommended that you use ELFs with this menu, however PBPs are now supported.
+
+The menu also has a built in submenu for USB access to the memory stick and various flash partitions. See further down for specific information on setting this up.
+
+Finally, there is a Shutdown option at the bottom.
+
+I have tested this on both a Fat PSP and a Slim PSP with no issues.
+
+WARNING: Make sure you have a recent, working NAND dump before using this app. I accept no responsibility for any damage or lost data.
+If you have any issues using this on the Slim PSP (warning about nand/lfatfs_updater.prx), go to the PSP Slim heading below.
+ 
+ 
+Preparing an ELF file for use with the menu
+*******************************************
+NOTE: Since 0.4 this is no longer necessary as EBOOT.PBP files can be run directly. However, this is still the recommended way to go.
+
+1) Run PBPUnpacker (http://www.pdc.me.uk/pbpunpacker.php)
+2) Open the EBOOT.PBP of the application you want to run
+3) Right click DATA.PSP and select Extract...
+4) Save it as "whatever-you-want.elf" - the filename will appear on the menu
+5) Copy the file to ms0:/elf on you memory stick
+6) If the app comes with PRXs, such as IdStorage Manager, copy them to the ms0:/elf folder as well
+ 
+ 
+Installation
+************
+- Set up your magic memory stick with Pandora
+- Set up your magic memory stick with Despertar del Cementerio v5
+- Make a new folder on the root of the memory stick, "elf"
+- Move ms0:/TM/DC5/kd/resurrection.elf to ms0:/elf and any other utilies you want access to
+- Copy the included resurrection.elf to ms0:/TM/DC5/kd/
+
+OPTIONAL - To enable flash over USB menu:
+- Get usb.prx, usbstor.prx, usbstormgr.prx, usbstorms.prx from the kd folder on a 1.50 dump
+- Copy them into ms0:/kd on your Des Cem v5 memory stick
+
+OPTIONAL - Extra setup for flash over USB menu to enable official firmware flash0 access:
+The latest official firmwares use a new encryption, so you must perform the following steps to enable access to its lflash partition over USB:
+Doing this will mess up USB access to 3.71 and lower flash0, and may break Des Cem v3 (not v4/5), so backup the two files replaced.
+
+- Get PRXdecrypter 2.0c from http://www.sendspace.com/file/p5x2nj
+- Using PBP Unpacker or a similar tool (as described above), copy the DATA.PSP from the 3.80 updater EBOOT to ms0:/enc on your memory stick
+- Run PRXdecrypter, pressing X - this will extract the updater PRXs
+- Exit PRXdecrypter, and run it again, pressing X - this will decrypt the updater PRXs
+- Rename the newly extracted and decrypted sceLFatFs_Updater_Driver.prx and sceNAND_Updater_Driver.prx in ms0:/enc to lfatfs_updater.prx and nand_updater.prx and copy them to ms0:/kd, overwriting the existing ones (make copies of the old ones first!)
+- Start the ELF menu in the usual way and go to the USB menu
+- FAT PSP ONLY: Choose the "Force decryption modules to load" option on the USB menu
+- The menu will now be capable of accessing 3.80+ OFW flash partitions
+ 
+After completing the above, use Pandora as normal and the menu should load.
+ 
+PSP Slim
+********
+To prevent the PSP Slim being bricked by flash0 over USB access, the PRXs nand_updater.prx and lfatfs_updater.prx are loaded.
+If your ms0:/kd folder does not have these files, you have an invalid Des Cem v5 installation and need to get the files yourself.
+To get them, follow the instructions above - "OPTIONAL - Extra setup for flash over USB menu to enable official firmware flash0 access", using the 3.90/4.01 updater rather than 3.80.
+ 
+ 
+Changelog
+*********
+0.3a -> 0.4
+- Now supports EBOOT.PBP files!
+- Added ability to force nand_updater and lfatfs_updater modules to load. This is useful if trying to access the flash0 of an official firmware as it will now work on a fat PSP
+- Brought hardware identification up to date in line with PSPident
+
+0.3 -> 0.3a
+- USB connection now displays bytes read/written for Memory Stick as well as NAND.
+- New method of using USB functions - pspbtcnf no longer needs editing. Just drag and drop the 4 USB PRXs into ms0:/kd
+- Memory stick cache flushed after disconnection to prevent corruption
+- Fixed crash on shutdown
+
+0.2a -> 0.3
+- Integrated Flash over USB menu, safe for Slim PSP if you follow the extra instructions
+- Cleanup of text display
+- Fixed battery info
+
+0.2 -> 0.2a
+- Fully detects motherboard revision based on Tachyon and Baryon numbers (hardware revision info)
+- Increases screen brightness to 80% (only on the fat PSP).
+- Battery info in the top right corner
+
+0.1a -> 0.2
+- Applications containing _SLIM or _FAT at the end of the filename (e.g. blah_SLIM.elf) will be greyed out if the menu is not running on that model.
+  e.g. keyCleaner_FAT.elf will be greyed out and unselectable on a Slim PSP.
+- Minor bug fixes
+
+0.1 -> 0.1a
+- Now sets the current working directory, so apps which load PRXs from the same folder as the elf will be fine
+- Moved "Now loading.../shutting down..." message
+ 
+ 
+Recommended stuff to go into ms0:/elf
+*************************************
+- The real resurrection.elf from Despertar del Cementerio v5, by Dark_AleX
+- nandTool 0.3 by cory1492
+- KeyCleaner/IdStorage Manager by Chilly Willy - only works on the fat PSP, for the Slim use nandTool 0.3
+- Original Pandora menu (for 1.50 downgrade)
+- Open Source Pandora Battery Tool, again by cory1492
+
+
+Comments or questions: use the release thread, PM me on MaxConsole or LAN.st, or find me on irc.malloc.us #wtf
+
+~jas0nuk

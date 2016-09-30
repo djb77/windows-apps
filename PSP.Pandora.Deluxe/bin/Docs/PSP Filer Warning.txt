@@ -1,0 +1,11 @@
+This EBOOT runs under kernel 3, and it must be considered as a TEST VERSION.
+It may not do following feature depending on CFW version:
+ Flash memory maintenance.
+ Connecting PC via USB.
+ Accessing & ripping UMD.
+
+これはカーネル３で動作するテストバージョンです。
+以下の機能はCFWバージョンによっては正常に動作しない可能性があります：
+　フラッシュメモリのメンテナンス
+　PCへのUSB接続
+　UMDへのアクセス（リッピング含む）

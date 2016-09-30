@@ -1,0 +1,28 @@
+CXMB for 3.71-5.50
+updated by Total_Noob
+
+-This version of CXMB works for custom firmwars:3.71-5.50
+-Its a Full version so you can also use it to make ctf's,
+make sure you use the right decrypted prx (paf.prx, common_gui.prx, vshmain.prx) 
+from each firmware
+
+install:
+Copy contents of folder: CXMB_full_all_cf to your memorystick.
+
+
+Previous versions credits go to:
+
+         (\___/)
+         (='.'=)
+         ( \ / )
+        ('')_('')
+         To Alien
+http://www.2alien.info
+http://www.2alien.net
+
+CXMB 3.2.1 for 3.71m33/3.80m33/3.90m33/4.01m33 by Poison
+
+-=CREDITs=-
+Thanks to Matchung, Gilleco, Aeolusc, Real.KK, SilverSpring, SchMilk.
+Thanks to everyone who has contributed to the PSPSDK.
+Thanks to everyone who has contributed to PSP CFW.

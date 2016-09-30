@@ -1,0 +1,119 @@
+Changes in version 7
+-----------------------
+
+- A format flash function has been added which is usefull to correct problems in some psp that get an error when installing 4.01 M33, or to have a custom partitioning of the flash.
+
+- An idstorage tools function has been addded. It allows to create a new idstorage (including for first time, the regeneration of region and umd keys), change region (including umd region), or fix wlan mac address.
+
+More info about the two new added functions below.
+ 
+
+
+Installation:
+ 
+- DC  iplloader doesn't require to mspformat the memory stick.
+However, in some memory stick it may still be necessary.
+Just run the program and if you find an error at 99%, run mspformat and try again.
+ 
+- Copy DC7 to PSP/GAME/
+ 
+- Download Sony 4.01 update eboot and copy it to ms rootwith the name 401.PBP
+
+- If you have a PTF custom theme set, quit it before running the program.
+ 
+- Use the app under a 3.x/4.x kernel. The program may not work in versions prior to 3.03 OE.
+ 
+- IF timemachine is installed in this memory stick, the program will ask you at the end which button(s) you want to boot DC7, otherwise no buttons will be necessary.
+ 
+- Now you have an universal pandora ms ready to go, and you just need a proper
+battery. If you have 1.50 kernel access, use c+d tool. Otherwise, use corly149 tool.
+ 
+Battery and ms will work on all psp except the very latest ta-88.
+
+Unbricking: 
+ 
+- Select the desired optin in the menu (Install 4.01 M33, Install 4.01 OFW, etc)
+ 
+- Nand operations-> nand restore currently performs a physical nand dump
+ 
+This proccess is very dangerous, and you should *just* use it if it's your
+last chance to get it working.
+ 
+This is a physical restore process (not a logical one), and will try to make 
+a 100% exact clon of the dump.
+ 
+If you are working with a dump that isn't yours, you will get either a brick
+or a corrupt idstorage, depending on the firmware.
+ 
+If while you are restoring your psp have got any damaged block more than 
+when you dumped it, you might also get a brick, depending on what block is it.
+If you want to boot the recovery mode of the 4.01 M33 of the memory stick, boot 
+the psp with R+the key used to boot DC7 (if any).
+
+- Lflash format (in nand operations menu)
+
+This function performs a physical format of the lflash, creates the 4 partitions again, with the
+user desired sizes (by default, they are set to the default of that system), and then performs
+a logical format of the 4 partitions.
+
+This function allows to fix some errors that appear in 4.01 M33 installation: Error assigning flashX, psp not booting after installing 4.01 M33, etc.
+
+It is also useful for fat users that want to make flash0 bigger by making the other partitions smaller.
+
+Note: the sizes shown in the menu refer to the size of the physical partition. The size of the
+logical partition maybe a bit smaller.
+
+No need to say that this operations deletes current content of flash. After lflash format, the
+flash is empty, you need to install 4.01 M33/OFW.
+
+- Create new idstorage (in nand operations menu, idstorage tools)
+
+This function destroys the current idstorage (if any), and creates a new one.
+It is useful when your idstorage has been corrupted and you didn't have a backup like hapenned to me with one psp :)
+
+Keys restore: common keys, and for first time region/openpsid/dnas/certificate keys and umd keys.
+
+What will and won't work after this?
+
+UMD: yes.
+Set time via internet (DNAS): yes
+adhoc: not tested, but hopefully it will work
+psn games: not tested but it should work. However your current bought games will not work, as your psp will be identified as a new device.
+usb: yes, your psp and ps3 will detect it as a new device because the psp identifier (psid) has changed.
+magicgate (drm videos/audio): it has not been tested, but it should NOT work, as a way to generate magicgates keys (0x10-0x13) has not been found (yet).
+
+
+First step: select a region for your new idstorage. If your region is not there, just select 
+whatever one, also if it is there, you can select another one if you want :)
+The region affects also umd videos/audios.
+
+Second step (optional): Press enter button to find real mac address (wifi switch must be on).
+If this step fails, then just press -> to continue and a random mac will be generated (in this case after idstorage creation, shutdown the psp, restart DC and goto idstorage tools -> fix mac, this time it should work unless there is a hardware problem).
+
+Last step is to press enter, and your new idstorage will be created.
+
+- Change region ((in nand operations menu, idstorage tools)
+
+This allows to change the region of the psp and the umd drive. After this, your psp will be able to play umd's of other region.
+As a side effect, your psp will be identified as a new device, so you'll have to download/buy
+psn games again, configure ps3 remote control again, etc.
+
+
+
+----
+
+Note: If you are gonna use the memory stick to restore a psp other than the one that created it,
+check if the file /TM/DC7/act.dat exists in the ms. If it exists, remove it, otherwise the restored psp may not be able to buy psn games until the user doesn't delete from flash2 the act.dat of the other psp. (act.dat files are unique for each psp).
+
+Note that act.dat will be restored to the moment of the MS creation. 
+If you have bought other PSN game later, the act.dat file may have changed and if you restore the old one, you may loose the latest bought game.
+Backup flash2:/act.dat each time after you buy something from the PSN!
+
+
+-----------
+Third party libraries
+
+This program uses intraFont by BenHur to render firmware fonts.
+intraFont modified code has been compiled in a separated prx, and its source
+and the original license can be found in intrafont directory.
+
