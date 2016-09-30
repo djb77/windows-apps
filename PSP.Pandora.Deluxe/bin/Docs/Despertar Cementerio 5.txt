@@ -1,0 +1,66 @@
+Changes in version 5
+-----------------------
+
+- Now installs 3.90 M33-3 instead of 3.80 M33-5
+- Integration with timemachine in case it is installed.
+---
+
+Installation:
+ 
+- Beginning at this version, DC uses same iplloader than timemachine which usually doesn't require to mspformat the memory stick.
+However, in some memory stick it may still be necessary.
+Just run the program and if you find an error, run mspformat and try again.
+ 
+- Copy DC5 to PSP/GAME/
+ 
+- Download 1.50, 3.40 and 3.90 update eboots and copy them to ms root with
+150.PBP, 340.PBP and 390.PBP names.
+
+- If you have a PTF custom theme set, quit it before running the program.
+ 
+- Use the app under a cfw with 2.x or 3.x kernel (be sure that kernel is 
+selected on recovery to the correct one (2.x or 3.x))
+ 
+- IF timemachine is installed in this memory stick, the program will ask you which button(s) you want to boot DC5, otherwise no buttons will be necessary.
+ 
+- Now you can delete 340 and 150 PBP's, as they won't be used more; but 390.PBP
+will be used for unbricker, so don't delete it.
+ 
+- Now you have an universal pandora ms ready to go, and you just need a proper
+battery. If you have 1.50 kernel access, use c+d tool. Otherwise, use corly149 tool.
+ 
+Battery and ms will work on all psp and slims to this date.
+
+Unbricking: 
+ 
+- Press X to install 3.90M33. 
+ 
+- Press O to install original 3.90 
+ 
+- Press [] to dump nand to nand-dump.bin. When done, psp will auto shutdown.
+ 
+- Press L+R+HOME+start to restore nand from nand-dump.bin
+ 
+This proccess is very dangerous, and you should *just* use it if it's your
+last chance to get it working.
+ 
+This is a physical restore process (not a logical one), and will try to make 
+a 100% exact clon of the dump.
+ 
+If you are working with a dump that isn't yours, you will get either a brick
+or a corrupt idstorage, depending on the firmware.
+ 
+If while you are restoring your psp have got any damaged block more than 
+when you dumped it, you might also get a brick, depending on what block is it.
+ 
+Works for both PSP and PSP Slim.
+
+----
+
+Note: If you are gonna use the memory stick to restore a psp other than the one that created it,
+check if the file /TM/DC5/registry/act.dat exists in the ms. If it exists, remove it, otherwise the restored psp may not be able
+to buy psn games until the user doesn't delete from flash2 the act.dat of the other psp. (act.dat files are unique for each psp).
+
+Note that act.dat will be restored to the moment of the MS creation. 
+If you have bought other PSN game later, the act.dat file may have changed and if you restore the old one, you may loose the latest bought game.
+Backup flash2:/act.dat each time after you buy something from the PSN!

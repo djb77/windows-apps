@@ -1,0 +1,48 @@
+Q: What is JoySens?
+A: JoySens is a custom firmware plugin for Sony PSP that allows you to control the sensitivity of the analog stick in a very
+   efficient way as well as "repair" faulty analog sticks. In very bad cases where the analog stick is not repairable, you
+   can also just disable it so it doesn't interfere with your games anymore.
+   Apart from that it includes functionality to swap and remap DPad input to analog stick and vice versa, hence allows you
+   to control the XMB with the analog stick for example.
+
+
+Q: How do I set JoySens to be able to control the XMB with the analog?
+A: Make sure that forceanalog is set to 1 in the ini (default) and change the remap mode to Analog->DPad (2) or Analog<->DPad (3)
+   if you still want to be able to give analog input in some way (for the photo viewer or browser).
+
+
+Q: My analog stick is messed up and lets my characters move in random directions even when I don't touch it!
+A: When the direction tends to always be the same, it's very likely that your analog stick is just off-centered.
+   In that case you need to adjust the center value in the ini to match your analog stick. You'll find good values for
+   it by leaving the analog stick untouched and watching the first pair of values in the first line of the info output.
+   Try to find a good average of the values you see and put those in the ini file. Restart your PSP and check if the second
+   pair of values in the first line of the info output stay at <0,0> when the analog stick is untouched and repeat the steps
+   from above if it doesn't.
+   Alternatively, you can try to use the semi-automatic center functionality. See the readme for exact instructions on that.
+
+   If the directions are completely random and never go in the same direction, it's probably just that the analog stick is
+   too responsive. In that case, try setting the adjust parameter to something like 2.0 - 2.5. Then slowly increase the value
+   until the ghost movement is gone.
+
+
+Q: My analog stick doesn't recognize input to the left/right/top/bottom!
+A: Check the first line of the info output when pressing the analog stick in that direction. If the analog stick scales correctly
+   you should see values -128 (up or left) or 127 (down or right) as the first (left or right) or second (up or down) coordinate.
+   So if you move your stick to the left, you should see <-128,*>, to the right you should see <127,*>, pulling up you should see
+   <*,-128> and down you should see <*,127>. If the values are smaller (bigger) your analog stick is messed up and you need to adjust
+   the min/max values in the ini file to represent the minimal/maximal values you get when moving the stick to the extremes.
+   Let's say you get values <-128,-101> to <96,127> then edit the ini file and set min to <-128,-98> and max to <93,127> or equal.
+   You should decrease the non maximum values a bit (by 2-3 is good in most cases) since those values are not 100% correct, so
+   you might still end up with unresponsive input with the exact values.
+   Now restart the plugin (by starting a homebrew/game or restarting the PSP) and check if analog stick is responsive again. If not
+   try to decrease the values further until it is.
+
+
+Q: My analog stick is unuseable, no matter what settings I try. How do I go about disabling it?
+A: Set the adjust parameter to 0 and the analog stick gets disabled.
+
+
+Q: JoySens doesn't work in CFW x.xx (>3.80)!
+A: Try formating your flash1 in the recovery menu (reboot while holding R trigger). If it still won't work,
+   also try formating your memory stick from the settings menu (make a backup first).
+   If it still won't work, you can contact me with information on the firmware you use and I'll take a look.

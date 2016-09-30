@@ -1,0 +1,61 @@
+Changes in version 3
+-----------------------
+
+- Coded a display driver that supports the psp slim screen in the mixed 1.50/3.40 kernel.
+- The M33 instalaltion will install 3.71 M33-2, not 3.71 M33
+
+---
+
+Installation:
+ 
+- If you have already a pandora ms, don't do this part. Otherwise, 
+format an ms using c+d mspformat or any other tool that allows to move
+partition to ~250kb from first sector
+ 
+Remove ms, usb and connect again usb and ms. 
+Make PSP and PSP/GAME dirs.
+ 
+- Copy despertar_cementerio to PSP/GAME/
+ 
+- Download 1.50, 3.40 and 3.71 update eboots and copy them to ms root with
+150.PBP, 340.PBP and 371.PBP names.
+ 
+- Use the app under a cfw with 2.x or 3.x kernel (be sure that kernel is 
+selected on recovery to the correct one (2.x or 3.x))
+ 
+- Once finished, u will have msipl.bin on root. If you already have a pandora
+ms, you don't have to do this step (ipl doesn't changes lol), otherwise, 
+use c+d msinst to install ipl on ms; or use dd command from unix, or any 
+hex-edit program to write on sector 16 on the physical drive.
+ 
+- Now you can delete 340 and 150 PBP's, as they won't be used more; but 371.PBP
+will be used for unbricker, so don't delete it.
+ 
+- Now you have an universal pandora ms ready to go, and you just need a proper
+battery. If you have 1.50 kernel access, use c+d tool. Otherwise, use corly149 tool.
+ 
+Battery and ms will work on all psp and slims to this date.
+
+Unbricking: 
+ 
+- Press X to install 3.71M33. 
+ 
+- Press O to install original 3.71 (rest of the process as the X option)
+ 
+- Press [] to dump nand to nand-dump.bin. When done, psp will auto shutdown.
+ 
+- Press L+R+HOME+start to restore nand from nand-dump.bin
+ 
+This proccess is very dangerous, and you should *just* use it if it's your
+last chance to get it working.
+ 
+This is a physical restore process (not a logical one), and will try to make 
+a 100% exact clon of the dump.
+ 
+If you are working with a dump that isn't yours, you will get either a brick
+or a corrupt idstorage, depending on the firmware.
+ 
+If while you are restoring your psp have got any damaged block more than 
+when you dumped it, you might also get a brick, depending on what block is it.
+ 
+Works for both PSP and PSP Slim.

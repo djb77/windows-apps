@@ -1,0 +1,48 @@
+5.00 M3-6
+----------
+
+This update is a try to fix memory stick low speed since 3.80.
+
+Instructions: Copy UPDATE folder /PSP/GAME/ and run.
+
+If you come from a version prior to 5.00 M33, put sony update as 500.PBP in same folder, or let the program download it for you using a wifi connection.
+
+Changes in 5.00 M33-5:
+
+ - A setting has been added to recovery, that, when enabled it may increase memory stick reading speed. (only on the psp, not in the pc).
+   By default it is disabled. If you installed 3.71 fatmsmod, do not use this setting, as its perfomance with 3.71 driver has not been tested.
+   Instead, reinstall 5.00 m33-4 using dc8 and update to 5.00 m33-5
+
+Changes in 5.00 M33-6:
+
+ - Fixed a bug that made unbootable psp without memory stick or with a bad one.
+
+The included file fat_comparison.html contains a comparison of perfomance between the 5.00 fat driver, the 3.71 one, and the 5.00 one with the speed up
+hack during the read of an iso.
+The test was done on the game Valkyrie Profile in cso format in march33 mode. Other games, modes and applications different than iso reading showed
+similar results.
+
+
+- Translating the recovery.
+To translate the recovery create a text file in ms0:/seplugins/xx_recovery.txt
+or flash1:/xx_recoery.txt (they are evaluated in that order), where xx is the language code 
+of your language:
+
+es -> spanish
+en -> english
+fr -> french
+de -> german
+it -> italian
+ja -> japanese
+ko -> korean
+nl -> netherlands
+pt -> portuguese
+ru -> russian
+ch1 -> chinese simplified
+ch2 -> chinese traditional
+
+The file en_recovery.txt in translate folder is included for people to translate to their languages, this file is not needed for english people, as the english language is used when no language file is found.
+Just change the english strings to your language ones, and put it in the path mentioned above. Be careful to check in the recovery that the lines look fine, don't use too large text.
+
+The spanish file es_recovery.txt will be written by the program in the memory stick.
+
